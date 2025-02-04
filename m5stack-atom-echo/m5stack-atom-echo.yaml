@@ -1,7 +1,7 @@
 substitutions:
   name: m5stack-atom-echo
   friendly_name: M5Stack Atom Echo
-  micro_wake_word_model: okay_nabu  # alexa, hey_jarvis, hey_mycroft are also supported
+  micro_wake_word_model: hey_jarvis  # alexa, hey_jarvis, hey_mycroft are also supported
 
 esphome:
   name: ${name}
@@ -308,17 +308,6 @@ select:
             - voice_assistant.stop
             - delay: 500ms
             - micro_wake_word.start
-
-external_components:
-  - source: github://pr#5230
-    components:
-      - esp_adf
-    refresh: 0s
-  - source: github://jesserockz/esphome-components
-    components: [file]
-    refresh: 0s
-
-esp_adf:
 
 file:
   - id: timer_finished_wave_file
